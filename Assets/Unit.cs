@@ -16,9 +16,10 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.touchCount > 0)
         {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Touch touch = Input.GetTouch(0);
+            target = Camera.main.ScreenToWorldPoint(touch.position);
             PathRequestManager.ReqeustPath(transform.position, target, OnPathFound);
         }
     }

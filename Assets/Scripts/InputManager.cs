@@ -11,9 +11,9 @@ public class InputManager : MonoBehaviour
     Vector3[] path;
     int targetIndex = 0;
 
-    public int RescoureLayer { get; private set; } // 자원
-    private int FishingLayer; // 낚시 
-    private int BonfireLayer; // 모닥불
+    public int RescoureLayer { get; private set; } // ????
+    private int FishingLayer; // ???? 
+    private int BonfireLayer; // ??????
     private int UILayer;
     private int BoatLayer;
 
@@ -30,11 +30,17 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.IsDead) return;
-        if (Input.GetMouseButtonDown(1)) // 마우스 클릭시
+        if (player.IsDead || UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() || GameManager.Instance.bUI) return;
+        if (Input.touchCount > 0 || Input.GetMouseButton(0))
         {
-
-            Vector3 transPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 position = Input.mousePosition; ;
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                position = touch.position;
+            }
+            
+            Vector3 transPos = Camera.main.ScreenToWorldPoint(position);
             bool isNeedMove = true;
             if (player.CanCatchFish)
             {
@@ -57,8 +63,6 @@ public class InputManager : MonoBehaviour
                         player.Collect(hit.collider);
                         isNeedMove = false;
                     } 
-            
-                   
                 }
                 else if (hitLayer == FishingLayer)
                 {

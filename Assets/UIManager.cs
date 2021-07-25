@@ -28,10 +28,12 @@ public class UIManager : MonoBehaviour
 
         if (!_targetUI.activeInHierarchy)
         {
+            GameManager.Instance.bUI = true;
             _targetUI.SetActive(true);
         }
         else
         {
+            GameManager.Instance.bUI = false;
             _targetUI.SetActive(false);
         }
     }

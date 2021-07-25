@@ -69,7 +69,7 @@ public class ResourceManager : MonoBehaviour
             index = new Vector2(Random.Range(0, (int)size.x), Random.Range(0, (int)size.y));
             if (i >= size.x * size.y)
             {
-                print("±‰±ﬁ ≈ª√‚!");
+                print("???? ????!");
                 return;
             }
         }
@@ -77,7 +77,7 @@ public class ResourceManager : MonoBehaviour
         Vector2 pos = new Vector2(size.x / 2 * -1 + 0.5f, size.y / 2 * -1 + 0.5f);
         pos += index;
 
-        Resource resource = new Resource();
+        Resource resource = gameObject.AddComponent<Resource>();
 
         foreach (var site in rects)
         {

@@ -113,12 +113,12 @@ public class Player : MonoBehaviour
             _targetPos = value;
         }
     }
-    private bool _isCollecting = false;
+    //private bool _isCollecting = false;
 
 
     private void Awake()
     {
-        SoundManager.Instance.ChangeClip("¿Œ∞‘¿”", true);
+        SoundManager.Instance.ChangeClip("??????", true);
     }
 
     // Start is called before the first frame update
@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         if (!already) { 
-        SoundManager.Instance.ChangeClip("¡◊¿Ω", false);
+        SoundManager.Instance.ChangeClip("????", false);
             already = true;
         }
         IsDead = true;

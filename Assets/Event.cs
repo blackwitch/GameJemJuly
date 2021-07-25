@@ -7,8 +7,8 @@ using TMPro;
 
 public class Event : MonoBehaviour
 {
-    public int Day = 0; //진행 날짜
-    public int windchance = 33; // 배 타고 바람불 확률
+    public int Day = 0; //???? ????
+    public int windchance = 33; // ?? ???? ?????? ????
     public int Daytime = 600;
     public Player player;
     public Image Screen;
@@ -16,13 +16,13 @@ public class Event : MonoBehaviour
     private int PriateDay;
     private bool PriateInvade;
     public bool mainisland;
-    private bool ship;
+    private bool ship = false;
     public TextMeshProUGUI Text;
     // Start is called before the first frame update
     void Start()
     {
         PriateDay = 6 + Random.Range(-2, 2);
-        Debug.Log($"해적등장일 {PriateDay}");
+        Debug.Log($"?????????? {PriateDay}");
     }
 
     // Update is called once per frame
@@ -35,20 +35,20 @@ public class Event : MonoBehaviour
             //Text.GetComponent<TextMeshProUGUI>().text = "Day " + Day;
 
 
-            Debug.Log($"지난 날 {Day}");
+            Debug.Log($"???? ?? {Day}");
             time = 0;
             if (ship)
             {
                 if (Random.Range(1, 101) > windchance)
                 {
-                    //여기는 배 시스템이 생겨야 만들수 있을듯 합니다.
+                    //?????? ?? ???????? ?????? ?????? ?????? ??????.
                 }
             }
             if (Day >= PriateDay)
             {
                 PriateEvent();
                 PriateDay = (Day + 6) + Random.Range(-2, 2);
-                Debug.Log($"다음 해적 등장일 {PriateDay}");
+                Debug.Log($"???? ???? ?????? {PriateDay}");
             }
         }
         if (!PriateInvade)
@@ -67,7 +67,7 @@ public class Event : MonoBehaviour
         if (ship)
         {
 
-            //이 부근은 전체적인 시스템이 만들어야 패널티를 부여할듯 합니다.
+            //?? ?????? ???????? ???????? ???????? ???????? ???????? ??????.
         }
         else
         {
@@ -76,18 +76,18 @@ public class Event : MonoBehaviour
     }
     IEnumerator Priate()
     {
-        Debug.Log("메인섬에서의 해적이벤트 발동");
+        Debug.Log("???????????? ?????????? ????");
         for (float alpah = 0.1f; alpah <= 1.1f; alpah += 0.1f)
         {
             Screen.color = new Color(0f, 0f, 0f, alpah);
             yield return new WaitForSeconds(0.05f);
         }
-        SoundManager.Instance.ChangeClip("폭격", true);
+        SoundManager.Instance.ChangeClip("????", true);
 
-        //이곳에 인벤 없애는 함수와 함께 집부수는 함수
+        //?????? ???? ?????? ?????? ???? ???????? ????
         player.Invoke("Pirate", 0);
         yield return new WaitForSeconds(2);
-        SoundManager.Instance.ChangeClip("폭격", false);
+        SoundManager.Instance.ChangeClip("????", false);
         yield return new WaitForSeconds(1);
         for (float alpah = 1f; alpah >= -0.1f; alpah -= 0.1f)
         {

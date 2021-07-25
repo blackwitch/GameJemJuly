@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _curTime = value;
-            // 10분이 지나면 하루.
+            // 10???? ?????? ????.
             if (_curTime > OneDay)
             {
                 Day++;
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     }
     private float _curTime = 0;
     public bool isPlaying = true;
+    public bool bUI = false;
     public string boatName = "";
 
     private void Awake()
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if(isPlaying) CurTime += Time.deltaTime;
-        // 플레이어가 밝고 있는 땅을 확인하여 CollectionSite를 변경함.
+        // ?????????? ???? ???? ???? ???????? CollectionSite?? ??????.
     }
     public void NewStart()
     {
