@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0044615e327e2be449b5d598f9351abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list_MyResource: []
-  list_MyItem: []
+  sItems: []
+  sResources: []
   capacity: 20
 --- !u!4 &37772981
 Transform:
@@ -530,6 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410805711}
   - component: {fileID: 410805710}
+  - component: {fileID: 410805712}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -552,6 +553,7 @@ MonoBehaviour:
   MainSceneName: SooBin
   OneDay: 600
   isPlaying: 1
+  bUI: 0
   boatName: 
 --- !u!4 &410805711
 Transform:
@@ -567,6 +569,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410805712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410805709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc015e0e462414b41898c9a4d3fe4423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resList:
+    resources: []
+  itemList:
+    items: []
 --- !u!1 &456390017
 GameObject:
   m_ObjectHideFlags: 0

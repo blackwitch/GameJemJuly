@@ -1,0 +1,272 @@
+{
+    "items": [
+        {
+            "itemName": "fishing_rod",
+            "KoreanName": "낚시대",
+            "description": "물고기를 잡을 수 있습니다.",
+            "itemType": "EXPENDABLE",
+            "durability": 10,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "itemName": "wood_knife",
+            "KoreanName": "나무칼",
+            "description": "닭/해물 사냥이 가능합니다. 무뎌서 쉽게 부서지만 이거라도 어디입니까.",
+            "itemType": "EXPENDABLE",
+            "durability": 2,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "itemName": "knife",
+            "KoreanName": "칼",
+            "description": "닭/해물 사냥이 가능합니다. 만들기는 어렵지만 꽤 오랜동안 사용이 가능합니다.",
+            "itemType": "EXPENDABLE",
+            "durability": 10,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "IRON",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "itemName": "bonfire",
+            "KoreanName": "모닥불",
+            "description": "모여서 노래하고 싶겠지만, 음식 만들 때 유용합니다. (xx Codiv...)",
+            "itemType": "EXPENDABLE",
+            "durability": 3,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 2
+                },
+                {
+                    "ResourceKind": "FLINT",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "itemName": "fish_dishes",
+            "KoreanName": "생선요리",
+            "description": "모닥불에 잘 구워진 물고기 요리. 껍질까지 바삭합니다. 쩝...",
+            "itemType": "EXPENDABLE",
+            "durability": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "FISH",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "itemName": "roasted_chicken",
+            "KoreanName": "구운 닭고기",
+            "description": "모닥불에 잘 구워진 닭 요리. 말해 뭐합니까... ",
+            "itemType": "EXPENDABLE",
+            "durability": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "CHICKEN",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "itemName": "bottle",
+            "KoreanName": "병",
+            "description": "깨끗한 식수를 담을 수 있습니다. 짠물은 노노!!",
+            "itemType": "EXPENDABLE",
+            "durability": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "itemName": "wood_house",
+            "KoreanName": "나무집",
+            "description": "늑대의 입김에 날아가는 나무 집. 하지만 늑대는 없으니 안심 안심.",
+            "itemType": "HOUSE",
+            "value": 1,
+            "defense": 0,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 20
+                }
+            ]
+        },
+        {
+            "itemName": "iron_house",
+            "KoreanName": "강철집",
+            "description": "쇠로 만들어 튼튼한 집. 여름이면... -_-;;",
+            "itemType": "HOUSE",
+            "value": 10,
+            "defense": 10,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 10
+                },
+                {
+                    "ResourceKind": "IRON",
+                    "count": 10
+                }
+            ]
+        },
+        {
+            "itemName": "gold_house",
+            "KoreanName": "황금집",
+            "description": "금으로 만들어 멋진 집. 누군가 깨물어 볼 수 있으니 주의!!",
+            "itemType": "HOUSE",
+            "value": 100,
+            "defense": 5,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 20
+                },
+                {
+                    "ResourceKind": "IRON",
+                    "count": 10
+                },
+                {
+                    "ResourceKind": "GOLD",
+                    "count": 5
+                }
+            ]
+        },
+        {
+            "itemName": "wooden_boat",
+            "KoreanName": "나무배",
+            "description": "나무로 만든 배. 장점 가볍다. 단점, 바람에 날아간다.",
+            "itemType": "BOAT",
+            "value": 5,
+            "defense": 0,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 30
+                }
+            ]
+        },
+        {
+            "itemName": "boat",
+            "KoreanName": "배",
+            "description": "나무에 쇠를 붙여 튼튼하고 빠르게 이동한다. 조금은...",
+            "itemType": "BOAT",
+            "value": 4,
+            "defense": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 20
+                },
+                {
+                    "ResourceKind": "IRON",
+                    "count": 5
+                }
+            ]
+        },
+        {
+            "itemName": "ship",
+            "KoreanName": "화물선",
+            "description": "물건을 많이 실을 수 있는 튼튼한 화물선. 무인도에서 실을 만한 물건을 찾기가 쉽지 않다.",
+            "itemType": "BOAT",
+            "value": 3,
+            "defense": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "WOOD",
+                    "count": 30
+                },
+                {
+                    "ResourceKind": "IRON",
+                    "count": 10
+                }
+            ]
+        },
+        {
+            "itemName": "cruise",
+            "KoreanName": "여객선",
+            "description": "금과 다이아몬드로 만들어진 거대한 여객선. 단, 탑승객은 오직 당신!!",
+            "itemType": "BOAT",
+            "value": 3,
+            "defense": 3,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "IRON",
+                    "count": 30
+                },
+                {
+                    "ResourceKind": "GOLD",
+                    "count": 10
+                },
+                {
+                    "ResourceKind": "DIAMOND",
+                    "count": 5
+                }
+            ]
+        },
+        {
+            "itemName": "nuclear",
+            "KoreanName": "핵폭탄",
+            "description": "해적의 공격을 1회 방어 가능",
+            "itemType": "WEAPON",
+            "value": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "URANIUM",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "itemName": "ring",
+            "KoreanName": "반지",
+            "description": "상어가 반짝이는 반지에 집중할 때 도망갈 수 있을지도.. 혹은 쓸모가 없을 수도 있다.",
+            "itemType": "WEAPON",
+            "value": 1,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "DIAMOND",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "itemName": "chicken_dishes",
+            "KoreanName": "흙닭구이",
+            "description": "생명력 50즉시 증가",
+            "itemType": "EXPENDABLE",
+            "value": 100,
+            "list_requiredResource": [
+                {
+                    "ResourceKind": "SAND",
+                    "count": 5
+                },
+                {
+                    "ResourceKind": "BOTTLE",
+                    "count": 1
+                },
+                {
+                    "ResourceKind": "CHICKEN",
+                    "count": 1
+                }
+            ]
+        }
+    ]
+}

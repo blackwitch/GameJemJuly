@@ -1,0 +1,59 @@
+{
+    "resources": [
+        {
+            "ResourceKind": "WOOD",
+            "KoreanName" : "목재",
+            "Ap": 80
+        },
+        {
+            "ResourceKind": "SAND",
+            "KoreanName": "모래",
+            "Ap": 80
+        },
+        {
+            "ResourceKind": "CHICKEN",
+            "KoreanName": "닭",
+            "Ap": 80
+        },
+        {
+            "ResourceKind": "FLINT",
+            "KoreanName": "부싯돌",
+            "Ap": 80
+        },
+        {
+            "ResourceKind": "IRON",
+            "KoreanName": "철",
+            "Ap": 50
+        },
+        {
+            "ResourceKind": "GOLD",
+            "KoreanName": "금",
+            "Ap": 50
+        },
+        {
+            "ResourceKind": "DIAMOND",
+            "KoreanName": "다이아몬드",
+            "Ap": 50
+        },
+        {
+            "ResourceKind": "TREASURE",
+            "KoreanName": "보물상자",
+            "Ap": 100
+        },
+        {
+            "ResourceKind": "URANIUM",
+            "KoreanName": "우라늄",
+            "Ap": 50
+        },
+        {
+            "ResourceKind": "FISH",
+            "KoreanName": "물고기",
+            "Ap": 50
+        },
+        {
+            "ResourceKind": "BOTTLE",
+            "KoreanName": "병",
+            "Ap": 100
+        }
+    ]
+}

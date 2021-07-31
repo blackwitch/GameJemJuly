@@ -6,6 +6,21 @@ using UnityEngine;
 using System.Linq;
 
 [Serializable]
+public class simpleItem
+{
+    public string name;
+    public int count;
+    public ResourceKind kind;
+}
+
+[Serializable]
+public class simpleResource
+{
+    public ResourceKind kind;
+    public int count;
+}
+
+[Serializable]
 public class Serialization<T>
 {
     public Serialization(List<T> target) => this.target = target;
@@ -32,15 +47,16 @@ public class SaveManager : MonoBehaviour
     public void SaveResource()
     {
         string json = "";
-
+        /*
         List<Resource> datas = new List<Resource>();
 
         foreach (var item in Inventory.instance.list_MyResource)
         {
             datas.Add(item);
         }
+        */
 
-        json = JsonUtility.ToJson(new Serialization<Resource>(datas));
+        json = JsonUtility.ToJson(new Serialization<simpleResource>(Inventory.instance.sResources));
         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(json);
         string code = Convert.ToBase64String(bytes);
 
@@ -53,14 +69,7 @@ public class SaveManager : MonoBehaviour
     {
         string json = "";
 
-        List<Item> datas = new List<Item>();
-
-        foreach (var item in Inventory.instance.list_MyItem)
-        {
-            datas.Add(item);
-        }
-
-        json = JsonUtility.ToJson(new Serialization<Item>(datas));
+        json = JsonUtility.ToJson(new Serialization<simpleItem>(Inventory.instance.sItems));
         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(json);
         string code = Convert.ToBase64String(bytes);
 
@@ -86,7 +95,7 @@ public class SaveManager : MonoBehaviour
 
         datas = JsonUtility.FromJson<Serialization<Resource>>(json).target;
 
-        Inventory.instance.list_MyResource.Clear();
+        //Inventory.instance.list_MyResource.Clear();
         //Inventory.instance.list_MyResource.AddRange(datas);
 
         print($"LOAD FROM : {file_path}");
@@ -109,7 +118,7 @@ public class SaveManager : MonoBehaviour
 
         datas = JsonUtility.FromJson<Serialization<Item>>(json).target;
 
-        Inventory.instance.list_MyItem.Clear();
+//        Inventory.instance.list_MyItem.Clear();
         //Inventory.instance.list_MyItem.AddRange(datas);
 
         print($"LOAD FROM : {file_path}");
