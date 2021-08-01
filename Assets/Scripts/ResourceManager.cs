@@ -40,7 +40,7 @@ public class ResourceManager : MonoBehaviour
         StopCoroutine("DelayCall");
         StartCoroutine("DelayCall");
         yield return new WaitForSeconds(1);
-            CreateRandomResources();
+        CreateRandomResources();
     }
     void CreateRandomResources()
     {
@@ -73,7 +73,8 @@ public class ResourceManager : MonoBehaviour
             {
                 if (site.Name == "ISLAND")
                 {
-                    switch (Random.Range(0, 6))
+                    int resIdx = Random.Range(0, 6);
+                    switch (resIdx)
                     {
                         case 0:
                             resource = ObjectPool.Instance.GetObj(ResourceKind.WOOD);
@@ -132,6 +133,13 @@ public class ResourceManager : MonoBehaviour
         }
 
         resource.transform.position = new Vector3(pos.x, pos.y, 0);
+        ResourceInfo info = DataManager.instance.resList.resources.Find(e => e.ResourceKind == resource.ResourceKind.ToString());
+        if(info != null)
+            resource.Ap = info.Ap;
+        else
+        {
+            Debug.Log("Incorrect resource type " + resource.ResourceKind.ToString());
+        }
 
         resources[(int)index.x, (int)index.y] = resource;
         StopCoroutine("DelayCall");

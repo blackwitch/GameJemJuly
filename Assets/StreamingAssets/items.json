@@ -95,60 +95,7 @@
                 }
             ]
         },
-        {
-            "itemName": "wood_house",
-            "KoreanName": "나무집",
-            "description": "늑대의 입김에 날아가는 나무 집. 하지만 늑대는 없으니 안심 안심.",
-            "itemType": "HOUSE",
-            "value": 1,
-            "defense": 0,
-            "list_requiredResource": [
-                {
-                    "ResourceKind": "WOOD",
-                    "count": 20
-                }
-            ]
-        },
-        {
-            "itemName": "iron_house",
-            "KoreanName": "강철집",
-            "description": "쇠로 만들어 튼튼한 집. 여름이면... -_-;;",
-            "itemType": "HOUSE",
-            "value": 10,
-            "defense": 10,
-            "list_requiredResource": [
-                {
-                    "ResourceKind": "WOOD",
-                    "count": 10
-                },
-                {
-                    "ResourceKind": "IRON",
-                    "count": 10
-                }
-            ]
-        },
-        {
-            "itemName": "gold_house",
-            "KoreanName": "황금집",
-            "description": "금으로 만들어 멋진 집. 누군가 깨물어 볼 수 있으니 주의!!",
-            "itemType": "HOUSE",
-            "value": 100,
-            "defense": 5,
-            "list_requiredResource": [
-                {
-                    "ResourceKind": "WOOD",
-                    "count": 20
-                },
-                {
-                    "ResourceKind": "IRON",
-                    "count": 10
-                },
-                {
-                    "ResourceKind": "GOLD",
-                    "count": 5
-                }
-            ]
-        },
+
         {
             "itemName": "wooden_boat",
             "KoreanName": "나무배",

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public string MainSceneName = "SooBin";
     public static GameManager Instance = null;
     public CollectionSite CollectionSite { get; private set; }
+    public Player player;
 
     private int _day = 1;
     public int Day

@@ -65,9 +65,9 @@ public class Resource : MonoBehaviour
         {
             ResourceInfo obj = DataManager.instance.resList.resources[i];
 
-            if (obj.ResourceKind == this.ResourceKind)
+            if (obj.ResourceKind == this.ResourceKind.ToString())
             {
-                InitializeResource(obj);
+                InitializeResource(obj, 10);
             }
         }
 
@@ -91,20 +91,18 @@ public class Resource : MonoBehaviour
         }
 
         int rand = Random.Range(0, 101);
-       // print($"rand value is [{rand}]");
-
         bool return_val = false;
-
-        /*       if (Ap > rand)
-                {
-                    Inventory.instance.AddResourceToInventory(this);
-                    StartCoroutine(ResourceManager.Instance.CCreateRandomResources());
-                    return_val = true;
-                }*/
-        Inventory.instance.AddResourceToInventory(this);
-        StartCoroutine(ResourceManager.Instance.CCreateRandomResources());
-        return_val = true;
+        if (Ap < rand)
+        {
+            return_val = false;
+        }
+        else
+        {
+            Inventory.instance.AddResourceToInventoryInc(this);
+            return_val = true;
+        }
         ObjectPool.Instance.ReleaseObj(this);
+        StartCoroutine(ResourceManager.Instance.CCreateRandomResources());
 
         return return_val;
     }

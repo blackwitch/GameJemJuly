@@ -270,8 +270,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896590677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3128, y: 0.2478, z: -1.2048408}
-  m_LocalScale: {x: 1.8922, y: 1.464852, z: 1}
+  m_LocalPosition: {x: -0.2304, y: 0.06, z: -1.2048408}
+  m_LocalScale: {x: 0.5444411, y: 1.3400027, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -545,8 +545,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainSceneName: SooBin
+  player: {fileID: 0}
   OneDay: 600
   isPlaying: 1
+  bUI: 0
   boatName: 
 --- !u!1001 &1734347697
 PrefabInstance:
@@ -559,9 +561,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: EscapeCanonEvent
       objectReference: {fileID: 0}
+    - target: {fileID: 962562801215656434, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848586225651867206, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848586225651867206, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407852085220861867, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407852085220861867, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5534449012759278416, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534449012759278416, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534449012759278416, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5534449012759278416, guid: 3fd5ecb98e03c45fbaa3c0397de61dfa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -852,7 +882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2723698091519507580, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1115
+      value: -2985
       objectReference: {fileID: 0}
     - target: {fileID: 2723698091519507580, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -7495,18 +7495,18 @@ PrefabInstance:
     - target: {fileID: 5035109151453654177, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1375732180}
     - target: {fileID: 5035109151453654177, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5035109151453654177, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NewStart
+      value: onRetry
       objectReference: {fileID: 0}
     - target: {fileID: 5035109151453654177, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: SeaSceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5035109151453654177, guid: 494ffabfaef294c39939f4f8f880d90b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

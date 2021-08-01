@@ -68,7 +68,14 @@ public class Inventory : MonoBehaviour
         {
             ele.Clear();
         });
-
+        DataManager.instance.myInven.mySlot.ForEach(ele =>
+        {
+            if(ele is ResourceSlot)
+                AddResourceToInventory(((ResourceSlot)ele).kind, ele.count);
+            else
+                AddItemToInventory(((ItemSlot)ele).itemName, ele.count);
+        });
+/*
         for (int i = 0; i < sResources.Count; i++)
         {
             if (i >= UIManager.instance.InvenSlotList.Count)
@@ -79,27 +86,67 @@ public class Inventory : MonoBehaviour
 
             UIManager.instance.InvenSlotList[i].Set(sResources[i].kind, sResources[i].count);
         }
+*/
     }
 
-    public void AddResourceToInventory(Resource _resource)
+    public void AddResourceToInventoryInc(Resource _resource)
     {
-        //  같은 종류가 있는지 우선 살핀다.
-        for (var i = 0; i < UIManager.instance.InvenSlotList.Count; i++)
+        SlotInfo si = DataManager.instance.myInven.mySlot.Find(e => (e is ResourceSlot && ((ResourceSlot)e).kind == _resource.ResourceKind && e.count > 0));
+        if (si != null)
         {
-            if (UIManager.instance.InvenSlotList[i].count > -1 && UIManager.instance.InvenSlotList[i].kind == _resource.ResourceKind)
-            {
-                UIManager.instance.InvenSlotList[i].AddCount( _resource.count);
-                return;
-            }
+            si.count += _resource.count;
+        }
+        else
+        {
+            DataManager.instance.myInven.mySlot.Add(new ResourceSlot(_resource.ResourceKind, _resource.count));
+        }
+        AddResourceToInventory(_resource.ResourceKind, _resource.count);
+    }
+
+    public void AddResourceToInventory(ResourceKind _kind, int _count)
+    {
+        //  같은 종류가 있는지 우선 확인.
+        InvenSlot slot = UIManager.instance.InvenSlotList.Find(e => (e.bResource == true && e.kind == _kind && e.count > 0));
+        if (slot)
+        {
+            slot.AddCount(_count);
+            return;
         }
 
-        for (var i = 0; i < UIManager.instance.InvenSlotList.Count; i++)
+        InvenSlot emptySlot = UIManager.instance.InvenSlotList.Find(e => e.count == -1);
+        if (emptySlot)
         {
-            if (UIManager.instance.InvenSlotList[i].count == -1)
-            {
-                UIManager.instance.InvenSlotList[i].Set(_resource.ResourceKind, _resource.count);
-                return;
-            }
+            emptySlot.Set(_kind, _count);
+        }
+    }
+
+    public void AddItemToInventoryInc(string _itemName, int _count)
+    {
+        SlotInfo si = DataManager.instance.myInven.mySlot.Find(e => (e is ItemSlot && ((ItemSlot)e).itemName == _itemName && e.count > 0));
+        if (si != null)
+        {
+            si.count += _count;
+        }
+        else
+        {
+            DataManager.instance.myInven.mySlot.Add(new ItemSlot(_itemName, _count));
+        }
+        AddItemToInventory(_itemName, _count);
+    }
+    public void AddItemToInventory(string _itemName, int _count) { 
+
+        //  같은 종류가 있는지 우선 확인.
+        InvenSlot slot = UIManager.instance.InvenSlotList.Find(e => (e.bResource == false && e.itemName == _itemName && e.count > 0));
+        if (slot)
+        {
+            slot.AddCount(_count);
+            return;
+        }
+
+        InvenSlot emptySlot = UIManager.instance.InvenSlotList.Find(e => e.count == -1);
+        if (emptySlot)
+        {
+            emptySlot.Set(_itemName, _count);
         }
     }
 }

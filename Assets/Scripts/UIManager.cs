@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     }
     public GameObject invenUI;
     public GameObject combinationUI, CombDesc;
+    public Combination combMng;
     public List<InvenSlot> InvenSlotList;
 
     private void Awake()
@@ -34,7 +35,12 @@ public class UIManager : MonoBehaviour
         if (!_targetUI.activeInHierarchy)
         {
             GameManager.Instance.bUI = true;
+
             _targetUI.SetActive(true);
+            if (_targetUI == combinationUI)
+            {
+                combMng.UpdateButtons();
+            }
         }
         else
         {

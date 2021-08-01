@@ -16,24 +16,24 @@ public class DescriptionUI : MonoBehaviour
             desc.text = itemInfo.description;
             switch (itemInfo.itemType)
             {
-                default: // case eItemType.EXPENDABLE:
-                    {
-                        detail.text = "??? : " + itemInfo.durability;
-                    }
-                    break;
-                case eItemType.HOUSE:
+                case "HOUSE":
                     {
                         detail.text = "HP ?? " + itemInfo.value + "/s \n" + "?? ?? ?? : " + itemInfo.defense;
                     }
                     break;
-                case eItemType.BOAT:
+                case "BOAT":
                     {
                         detail.text = "?? ??? : " + itemInfo.value + "\n" + "?? ?? ?? : " + itemInfo.defense;
                     }
                     break;
-                case eItemType.WEAPON:
+                case "WEAPON":
                     {
                         detail.text = "?? ?? ??  : " + itemInfo.value;
+                    }
+                    break;
+                default: // case eItemType.EXPENDABLE:
+                    {
+                        detail.text = "??? : " + itemInfo.durability;
                     }
                     break;
             }
@@ -41,7 +41,7 @@ public class DescriptionUI : MonoBehaviour
             var str = "";
             for (int i = 0; i < itemInfo.list_requiredResource.Count; i++)
             {
-                str += itemInfo.list_requiredResource[i].ResourceKind.ToString() + " : " + itemInfo.list_requiredResource[i].count.ToString();
+                str += itemInfo.list_requiredResource[i].ResourceKind.ToString() + " : " + itemInfo.list_requiredResource[i].count.ToString() + "\n";
             }
             combDesc.text = str;
         }

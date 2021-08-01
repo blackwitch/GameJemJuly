@@ -119,6 +119,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         SoundManager.Instance.ChangeClip("??????", true);
+        GameManager.Instance.player = this;
     }
 
     // Start is called before the first frame update
@@ -254,9 +255,10 @@ public class Player : MonoBehaviour
         CurState = PlayerState.COLLECT;
         Debug.Log("collect something..");
         yield return new WaitForSeconds(collectDelay);
-        bool result = res.Collection();
-        if (result) SuccessSomeThing();
-        else FailSomeThing();
+        if(res.Collection())
+            SuccessSomeThing();
+        else
+            FailSomeThing();
         CurState = PlayerState.IDLE;
 
     }
@@ -296,12 +298,10 @@ public class Player : MonoBehaviour
             return;
         }
        
-        bool success = curFish.Collection();
-        if (success)
-        {
+        if (curFish.Collection())
             SuccessSomeThing();
-        }
-        else FailSomeThing();
+        else
+            FailSomeThing();
 
         curFish = null;
         CurState = PlayerState.IDLE;
@@ -311,7 +311,8 @@ public class Player : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, TargetPos, Time.deltaTime * _speed);
     }
-    void Pirate()
+
+    public void Pirate()
     {
         Hp -= 20;
     }

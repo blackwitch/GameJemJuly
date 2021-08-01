@@ -35,6 +35,10 @@ public class treasurebox_open_event : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         yield return new WaitForSeconds(2);
+        DataManager.instance.myInven.mySlot.Add(new ResourceSlot(ResourceKind.WOOD, 20));
+        DataManager.instance.myInven.mySlot.Add(new ResourceSlot(ResourceKind.IRON, 20));
+        DataManager.instance.myInven.mySlot.Add(new ResourceSlot(ResourceKind.GOLD, 20));
+        DataManager.instance.myInven.mySlot.Add(new ResourceSlot(ResourceKind.DIAMOND, 20));
         //  보상 추가 처리
         listRewards.ForEach((ele) => ele.SetActive(false));
     }

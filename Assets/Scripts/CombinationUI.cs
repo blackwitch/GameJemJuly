@@ -14,10 +14,11 @@ public class CombinationUI : MonoBehaviour
         ButtonIsInteractable();
     }
 
-    bool ButtonIsInteractable()
+    public bool ButtonIsInteractable()
     {
         if (combination.CheckCombination(targetItem.GetComponent<Item>().info.itemName))
         {
+            GetComponent<Button>().interactable = true;
             return true;
         }
         GetComponent<Button>().interactable = false;

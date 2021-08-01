@@ -18,8 +18,7 @@ public class ItemInfo
     public string itemName;
     public string KoreanName;
     public string description;
-    [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-    public eItemType itemType { get; set; }
+    public string itemType;
     public int durability = 0;
     public int value = 0;
     public int defense = 0;
@@ -35,16 +34,16 @@ public class ItemInfoList
 [System.Serializable]
 public class NeedResourceInfo
 {
-    [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-    public ResourceKind ResourceKind { get; set; }
+    public string ResourceKind;
     public int count;
 }
 
 [System.Serializable]
 public class ResourceInfo
 {
-    [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-    public ResourceKind ResourceKind { get; set; }
+    //    [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+    //    public ResourceKind ResourceKind { get; set; }
+    public string ResourceKind;
     public string KoreanName;
     public int Ap;
 };
@@ -55,6 +54,34 @@ public class ResourceInfoList
     public List<ResourceInfo> resources = new List<ResourceInfo>();
 }
 
+[System.Serializable]
+public class SlotInfo
+{
+    public int count;
+}
+
+[System.Serializable]
+public class ResourceSlot : SlotInfo
+{
+    public ResourceKind kind;
+
+    public ResourceSlot(ResourceKind _kind, int _count) { base.count = _count;  kind = _kind; }
+}
+
+[System.Serializable]
+public class ItemSlot : SlotInfo
+{
+    public string itemName;
+
+    public ItemSlot(string _name, int _count) { base.count = _count; itemName = _name; }
+
+}
+
+[System.Serializable]
+public class MyInven
+{
+    public List<SlotInfo> mySlot = new List<SlotInfo>();
+}
 
 public class DataManager : MonoBehaviour
 {
@@ -73,6 +100,7 @@ public class DataManager : MonoBehaviour
 
     public ResourceInfoList resList = new ResourceInfoList();
     public ItemInfoList itemList = new ItemInfoList();
+    public MyInven myInven = new MyInven();
 
     void Awake()
     {
